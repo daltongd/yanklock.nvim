@@ -38,14 +38,35 @@ require('yanklock').setup({
 })
 ```
 
-The plugin doesn't set any keymap by default, so you have to add this line somewhere (e.g. in `nvim/lua/configs/keymaps.lua`)
+The plugin doesn't set any keymap by default, so to make it work you will have to add this line somewhere in your config (e.g. in `init.lua` or `keymaps.lua`)
 
 ```lua
-
 vim.keymap.set("n", "<leader>yl", ":lua require('yanklock').toggle()<cr>", { desc = "yanklock toggle" })
 ```
 
 #### Using [lazy.nvim](https://github.com/folke/lazy.nvim)
+
+Add a `plugins/yanklock.lua` file with these contents
+
+```lua
+return {
+  dir = "daltongd/yanklock.nvim",
+  opts = {
+    notify = true, -- optional
+  },
+  keys = {
+    {
+      "<leader>yl",
+      function()
+        require("yanklock").toggle()
+      end,
+      desc = "yanklock toggle",
+    },
+  },
+}
+```
+
+Or add this to your `plugins.lua`
 
 ```lua
 {
@@ -89,14 +110,16 @@ Unlocking
 
 ### Customization
 
+Defaults
+
 ```lua
 {
   modes = { "n", "x" },
-  notify = true,
+  notify = false,
 }
 ```
 
-Example
+Example config
 
 ```lua
 {
