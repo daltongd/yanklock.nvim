@@ -1,10 +1,11 @@
 ==============================================================================
                                                                *yanklock.nvim*
 
-A plugin that temporarily 'locks' the yank register used by the paste (p or P)
-motions to "0, so that you can safely use commands like d, c, x, s, and their
-upper-case counterparts, or paste over text in the visual mode with p wile
-keeping the pasted contents to the last thing you yanked (y).
+A simple [Neovim](https://neovim.io/) plugin that *temporarily* 'locks' the yank
+register used by the `paste` (`p` or `P`) motions to `"0`, allowing you to safely use
+motions like `d`, `c`, `x`, `s`, and their uppercase counterparts, or paste over text
+in visual mode with `p`, while keeping the most recent yanked (`y`) content easily
+accessible.
 
 
                                                             *yanklock.setup()*
