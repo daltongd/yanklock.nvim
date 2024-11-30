@@ -2,7 +2,7 @@
 
 ## What is yanklock?
 
-A simple plugin for [neovim](https://neovim.io/) that *temporarily* 'locks' the yank buffer used by the `paste` (`p` or `P`) command to `"0`, so that you can safely use commands like `d`, `c`, `x`, `s`, and their upper-case counterparts, or paste over text in the visual mode with `p` wile keeping the pasted contents to the last thing you yanked (`y`).
+A simple plugin for [neovim](https://neovim.io/) that *temporarily* 'locks' the yank buffer used by the `paste` (`p` or `P`) motions to `"0`, so that you can safely use commands like `d`, `c`, `x`, `s`, and their upper-case counterparts, or paste over text in the visual mode with `p` wile keeping the pasted contents to the last thing you yanked (`y`).
 
 This plugin came to be from a basic need to avoid typing `"0p` every time I wanted to do a bunch of changes at once, this way they can be done quickly and without hesitating. The existing plugins didn't 'cut' it, I wanted a simpler and a completely reversible solution to keep the 'vanilla' vim motions for the most part, but have this functionality handy if I ever need it.
 
