@@ -43,9 +43,9 @@ local revert = function()
 	end
 end
 
-local notify = function(text)
+local notify = function(message)
 	if M.options.notify then
-		print(text)
+		vim.notify(message, vim.log.levels.INFO, { title = "yanklock" })
 	end
 end
 
