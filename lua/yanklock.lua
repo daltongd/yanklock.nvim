@@ -2,7 +2,6 @@ local M = {}
 
 LOCKED = true
 UNLOCKED = false
-EMPTY = {}
 
 M._state = {}
 M._reset_state = function()
@@ -33,14 +32,14 @@ end
 
 local replace = function(mode, mapping, replacement)
 	M._state.cache[mode] = M._state.cache[mode] or {}
-	M._state.cache[mode][mapping] = get_keymap(mode, mapping) or EMPTY
+	M._state.cache[mode][mapping] = get_keymap(mode, mapping) or false
 	vim.keymap.set(mode, mapping, replacement)
 end
 
 local revert = function()
 	for mode, mappings in pairs(M._state.cache) do
 		for mapping, rhs in pairs(mappings) do
-			if M._state.cache[mode][mapping] ~= EMPTY then
+			if M._state.cache[mode][mapping] then
 				vim.keymap.set(mode, mapping, rhs.rhs)
 			else
 				vim.keymap.del(mode, mapping)
@@ -83,7 +82,5 @@ M.toggle = function()
 		M.lock()
 	end
 end
-
--- vim.keymap.set("n", "<leader>ly", ":lua require('yanklock').toggle()<CR>")
 
 return M
