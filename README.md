@@ -88,6 +88,16 @@ Or add this to your `plugins.lua`
 
 Note: `opts = { notify = true }` is especially useful when paired with a notification plugin like [noice.nvim](https://github.com/folke/noice.nvim).
 
+### Docs
+
+To access more info about the available lua functions see:
+
+```vim
+:help yanklock
+```
+
+Note: if you're using [lazy.nvim](https://github.com/folke/lazy.nvim) to load the plugin, the help may not be available until it's loaded (used for the first time in the session).
+
 ### Usage
 
 Toggle the lock on/off
