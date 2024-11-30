@@ -16,12 +16,6 @@ local apply_defaults = function(options)
 	}
 end
 
-M.setup = function(options)
-	M.options = apply_defaults(options or {})
-
-	M._reset_state()
-end
-
 local get_keymap = function(mode, mapping)
 	local keymaps = vim.api.nvim_get_keymap(mode)
 	for _, keymap in ipairs(keymaps) do
@@ -53,6 +47,12 @@ local notify = function(text)
 	if M.options.notify then
 		print(text)
 	end
+end
+
+M.setup = function(options)
+	M.options = apply_defaults(options or {})
+
+	M._reset_state()
 end
 
 M.lock = function()
