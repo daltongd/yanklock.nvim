@@ -1,1 +1,5 @@
-yanklock.nvim	yanklock.txt	/*yanklock.nvim*
+yanklock.lock()	yanklock.nvim.txt	/*yanklock.lock()*
+yanklock.nvim	yanklock.nvim.txt	/*yanklock.nvim*
+yanklock.setup()	yanklock.nvim.txt	/*yanklock.setup()*
+yanklock.toggle()	yanklock.nvim.txt	/*yanklock.toggle()*
+yanklock.unlock()	yanklock.nvim.txt	/*yanklock.unlock()*
