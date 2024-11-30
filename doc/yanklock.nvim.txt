@@ -1,62 +1,68 @@
-================================================================================
-                                                                 *yanklock.nvim*
+==============================================================================
+                                                               *yanklock.nvim*
 
 A plugin that temporarily 'locks' the yank buffer used by the paste (p or P)
 motions to "0, so that you can safely use commands like d, c, x, s, and their
 upper-case counterparts, or paste over text in the visual mode with p wile
 keeping the pasted contents to the last thing you yanked (y).
 
+
                                                             *yanklock.setup()*
+yanklock.setup({opts})
 
-Sets up the plugin applying the {opts}.
+    Sets up the plugin applying the {opts}.
 
->
-  require('yanklock').setup({opts})
+>lua
+        require('yanklock').setup()
 <
 
-Available {opts}:
-  - {modes}: select the modes that should be affected by the lock
-  - {notify}: choose whether to notify the user about the state changes -
-    especially useful when paired with a notification plugin like `noice.nvim`
+    Available {opts}:
+      - {modes}: select the modes that should be affected by the lock
+      - {notify}: choose whether to notify the user about the state changes -
+        especially useful when paired with a notification plugin like `noice.nvim`
 
-Defaults:
->
-  {
-    modes = { "n", "x" },
-    notify = false,
-  }
+    Defaults:
+
+>lua
+        {
+          modes = { "n", "x" },
+          notify = false,
+        }
 <
 
                                                            *yanklock.toggle()*
+yanklock.toggle()
 
-Toggles the state of the lock. Primary way to interact with the plugin.
+    Toggles the state of the lock. Primary way to interact with the plugin.
 
->
-  require('yanklock').toggle()
+>lua
+        require('yanklock').toggle()
 <
 
                                                              *yanklock.lock()*
+yanklock.lock()
 
-Sets the lock state to LOCKED. This function remaps the `p` and `P` motions
-to `"0p` and `"0P` for the modes set in the options (see |yanklock.setup()|)
-and saves the previous keymaps, if any, to later revert when unlocking
-(see |yanklock.unlock()|).
+    Sets the lock state to LOCKED. This function remaps the `p` and `P` motions
+    to `"0p` and `"0P` for the modes set in the options (see |yanklock.setup()|)
+    and saves the previous keymaps, if any, to later revert when unlocking
+    (see |yanklock.unlock()|).
 
-Does nothing if the lock was already in the LOCKED state.
+    Does nothing if the lock was already in the LOCKED state.
 
->
-  require('yanklock').lock()
+>lua
+        require('yanklock').lock()
 <
 
                                                            *yanklock.unlock()*
->
+yanklock.unlock()
 
-Sets the lock state to UNLOCKED. This function resets the keymaps for the
-`p` and `P` motions to the state from before the |yanklock.lock()| was called.
+    Sets the lock state to UNLOCKED. This function resets the keymaps for the
+    `p` and `P` motions to the state from before the |yanklock.lock()| was called.
 
-Does nothing if the lock was already in the UNLOCKED state.
->
-  require('yanklock').unlock()
+    Does nothing if the lock was already in the UNLOCKED state.
+
+>lua
+        require('yanklock').unlock()
 <
 
 vim:tw=78:ts=8:ft=help:norl:
