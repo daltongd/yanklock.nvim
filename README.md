@@ -13,9 +13,10 @@ First of all you may use `P` in the visual mode to paste over the selected text 
 There are some much more powerful plugins that improve the `yank` functionality, some of which can achieve a similar functionality. The one worth mentioning is [cutlass.nvim](https://github.com/gbprod/cutlass.nvim). Use it if you'd prefer to make this behavior permanent.
 
 Other plugins that may interest you, some of which can achieve similar behavior:
-[yanky.nvim](https://github.com/gbprod/yanky.nvim)
-[nvim-miniyank](https://github.com/bfredl/nvim-miniyank)
-[yankbank-nvim](https://github.com/ptdewey/yankbank-nvim)
+
+- [yanky.nvim](https://github.com/gbprod/yanky.nvim)
+- [nvim-miniyank](https://github.com/bfredl/nvim-miniyank)
+- [yankbank-nvim](https://github.com/ptdewey/yankbank-nvim)
 
 ## Getting Started
 
@@ -35,6 +36,13 @@ With custom options
 require('yanklock').setup({
   -- your options go here. see: ### Customization section in this readme
 })
+```
+
+The plugin doesn't set any keymap by default, so you have to add this line somewhere (e.g. in `nvim/lua/configs/keymaps.lua`)
+
+```lua
+
+vim.keymap.set("n", "<leader>yl", ":lua require('yanklock').toggle()<cr>", { desc = "yanklock toggle" })
 ```
 
 #### Using [lazy.nvim](https://github.com/folke/lazy.nvim)
@@ -124,5 +132,5 @@ Contributions are more than welcome. If you have a problem with the plugin feel 
 
 ### Acknowledgements
 
-[telescope.nvim](https://github.com/nvim-telescope/telescope.nvim) - a great inspiration, and a well written plugin I learned a lot from
-[plenary.nvim](https://github.com/nvim-lua/plenary.nvim) - an awesome set of tools, used by this plugin for it's testing framework
+- [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim) - a great inspiration, and a well written plugin I learned a lot from
+- [plenary.nvim](https://github.com/nvim-lua/plenary.nvim) - an awesome set of tools, used by this plugin for it's testing framework
