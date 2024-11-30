@@ -3,55 +3,53 @@
 
                                                             *yanklock.setup()*
 
-Sets up the plugin applying the {opts}.
+  Sets up the plugin applying the {opts}.
 
 >
-  require('yanklock').setup({opts})
+    require('yanklock').setup({opts})
 <
 
-Available {opts}:
-  - {modes}: select the modes that should be affected by the lock
-  - {notify}: choose whether to notify the user about the state changes -
-    especially useful when paired with a notification plugin like `noice.nvim`
+  Available {opts}:
+    - {modes}: select the modes that should be affected by the lock
+    - {notify}: choose whether to notify the user about the state changes -
+      especially useful when paired with a notification plugin like `noice.nvim`
 
-Defaults:
+  Defaults:
 >
-  {
-    modes = { "n", "x" },
-    notify = false,
-  }
+    {
+      modes = { "n", "x" },
+      notify = false,
+    }
 <
 
                                                            *yanklock.toggle()*
 
-Toggles the state of the lock. Primary way to interact with the plugin.
+  Toggles the state of the lock. Primary way to interact with the plugin.
 
 >
-  require('yanklock').toggle()
+    require('yanklock').toggle()
 <
 
                                                              *yanklock.lock()*
 
-Sets the lock state to LOCKED. This function remaps the `p` and `P` motions
-to `"0p` and `"0P` for the modes set in the options (see |yanklock.setup()|)
-and saves the previous keymaps, if any, to later revert when unlocking
-(see |yanklock.unlock()|).
+  Sets the lock state to LOCKED. This function remaps the `p` and `P` motions
+  to `"0p` and `"0P` for the modes set in the options (see |yanklock.setup()|)
+  and saves the previous keymaps, if any, to later revert when unlocking
+  (see |yanklock.unlock()|).
 
-Does nothing if the lock was already in the LOCKED state.
+  Does nothing if the lock was already in the LOCKED state.
 
 >
-  require('yanklock').lock()
+    require('yanklock').lock()
 <
 
                                                            *yanklock.unlock()*
->
 
-Sets the lock state to UNLOCKED. This function resets the keymaps for the
-`p` and `P` motions to the state from before the |yanklock.lock()| was called.
+  Sets the lock state to UNLOCKED. This function resets the keymaps for the
+  `p` and `P` motions to the state from before the |yanklock.lock()| was called.
 
-Does nothing if the lock was already in the UNLOCKED state.
+  Does nothing if the lock was already in the UNLOCKED state.
 >
-  require('yanklock').unlock()
+    require('yanklock').unlock()
 <
-
 vim:tw=78:ts=8:ft=help:norl:
