@@ -1,7 +1,7 @@
 local M = {}
 
-LOCKED = true
-UNLOCKED = false
+local LOCKED = true
+local UNLOCKED = false
 
 M._state = {}
 M._reset_state = function()
@@ -13,6 +13,7 @@ local apply_defaults = function(options)
 	return {
 		modes = options.modes or { "n", "x" },
 		notify = options.notify or false,
+		lualine = options.lualine or false,
 	}
 end
 
