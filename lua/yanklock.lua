@@ -12,6 +12,7 @@ M._reset_state()
 local apply_defaults = function(options)
 	return {
 		modes = options.modes or { "n", "x" },
+		notify = options.notify or false,
 	}
 end
 
@@ -48,9 +49,15 @@ local revert = function()
 	end
 end
 
+local notify = function(text)
+	if M.options.notify then
+		print(text)
+	end
+end
+
 M.lock = function()
 	if M._state.lock == LOCKED then
-		print("yanklock: already locked")
+		notify("yanklock: already locked")
 		return
 	end
 	M._state.lock = LOCKED
@@ -60,19 +67,19 @@ M.lock = function()
 		replace(mode, "P", '"0P')
 	end
 
-	print("yanklock: locked")
+	notify("yanklock: locked")
 end
 
 M.unlock = function()
 	if M._state.lock == UNLOCKED then
-		print("yanklock: already unlocked")
+		notify("yanklock: already unlocked")
 		return
 	end
 	M._state.lock = UNLOCKED
 
 	revert()
 
-	print("yanklock: unlocked")
+	notify("yanklock: unlocked")
 end
 
 M.toggle = function()
