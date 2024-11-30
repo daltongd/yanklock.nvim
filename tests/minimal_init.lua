@@ -2,14 +2,14 @@
 
 local plenary_root = "/tmp/plenary.nvim"
 if vim.fn.isdirectory(plenary_root) == 0 then
-	vim.fn.system({
-		"git",
-		"clone",
-		"--depth",
-		"1",
-		"https://github.com/nvim-lua/plenary.nvim",
-		plenary_root,
-	})
+  vim.fn.system({
+    "git",
+    "clone",
+    "--depth",
+    "1",
+    "https://github.com/nvim-lua/plenary.nvim",
+    plenary_root,
+  })
 end
 
 vim.opt.rtp:append(".")
