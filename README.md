@@ -86,7 +86,7 @@ Or add this to your `plugins.lua`
 },
 ```
 
-Note: `opts = { notify = true }` makes sense only if you're using a notification plugin like [noice.nvim](https://github.com/folke/noice.nvim).
+Note: `opts = { notify = true }` is especially useful when paired with a notification plugin like [noice.nvim](https://github.com/folke/noice.nvim).
 
 ### Usage
 
@@ -118,6 +118,9 @@ Defaults
   notify = false,
 }
 ```
+
+- `modes`: select the modes that should be affected by the lock
+- `notify`: choose whether you'd like to get notified about the state changes - especially useful when paired with a notification plugin like `noice.nvim`
 
 Example config
 
