@@ -1,5 +1,8 @@
 # 🔒 yanklock.nvim
 
+![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/daltongd/yanklock.nvim/run_tests.yml?style=for-the-badge&logo=github&label=tests&labelColor=%23aa55aa)
+![GitHub License](https://img.shields.io/github/license/daltongd/yanklock.nvim?style=for-the-badge&logo=opensourceinitiative)
+
 ## What is yanklock?
 
 A simple plugin for [neovim](https://neovim.io/) that *temporarily* 'locks' the yank buffer used by the `paste` (`p` or `P`) motions to `"0`, so that you can safely use commands like `d`, `c`, `x`, `s`, and their upper-case counterparts, or paste over text in the visual mode with `p` wile keeping the pasted contents to the last thing you yanked (`y`).
