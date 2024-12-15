@@ -34,7 +34,7 @@ end
 local revert = function()
   for mode, mappings in pairs(M._state.cache) do
     for mapping, rhs in pairs(mappings) do
-      if M._state.cache[mode][mapping] then
+      if M._state.cache[mode][mapping] and rhs and rhs.rhs then
         vim.keymap.set(mode, mapping, rhs.rhs)
       else
         vim.keymap.del(mode, mapping)
