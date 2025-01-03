@@ -56,7 +56,7 @@ Add a `plugins/yanklock.lua` file with these contents
 
 ```lua
 return {
-  dir = "daltongd/yanklock.nvim",
+  "daltongd/yanklock.nvim",
   opts = {
     notify = true, -- optional
   },
@@ -76,7 +76,7 @@ Or add this to your `plugins.lua`
 
 ```lua
 {
-  dir = "daltongd/yanklock.nvim",
+  "daltongd/yanklock.nvim",
   opts = {
     notify = true, -- optional
   },
@@ -142,7 +142,7 @@ Example config
 
 ```lua
 {
-  dir = "daltongd/yanklock.nvim",
+  "daltongd/yanklock.nvim",
   opts = {
     modes = { "n", "x" },
     notify = true,
